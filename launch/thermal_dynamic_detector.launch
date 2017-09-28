@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Flip thermal camera  -->
+	<node type="thermal_dynamic_detector_ros.py" name="thermal_dynamic_detector" pkg="thermal_dynamic_detector" respawn="true" output="screen">
+		<param name="topicImageIn" value="/FlirA65/image_raw" />
+		<param name="topicImageOut" value="/det/thermal_dynamic_camera/threshold/heat" />
+
+		<param name="rRemoveSky" value="0.2" />
+		<param name="degAboveMedian" value="3.0" />
+		<param name="degDiff" value="15.0" />
+		<param name="rot90Image" value="2" />
+		<param name="connectComponents" value="True" />
+
+	</node>
+</launch>
